@@ -1,0 +1,129 @@
+*, *::before, *::after {
+    font-family:"Courier New", fantasy, serif;
+    font-size:xx-large;
+}
+body {
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 30%);
+}
+:root {
+    --hue-neutral: 200;
+    --hue-correct: 145;
+    --hue-wrong: 0;
+}
+body.correct {
+    --hue: var(--hue-correct);
+}
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+.container {
+    padding: 2rem;
+}
+.play-again {
+    position:absolute;
+    background-color: white;
+    top: 5%;
+    left:20%;
+    right:5%;
+    font-size: small;
+    border-radius: 3.125rem 1.25rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px 2px;
+    visibility:hidden;
+}
+.box-anim {
+    z-index: 10;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+#guessed{
+    font-size: x-large;
+    display: none;
+}
+#not-guessed {
+    font-size: x-large;
+    display: none;
+
+}
+#yes{
+    position: relative;
+    font-size: x-large;
+    margin-top: 0.7rem;
+    margin-left: 10%;
+}
+#yes:hover {
+    transition: 0.7s;
+    background-color: #009940;
+    color: white;
+}
+#no {
+    position: relative;
+    font-size: x-large;
+    margin-top: 0.7rem;
+    margin-left: 10%;
+
+}
+#no:hover {
+    transition: 0.7s;
+    background-color: #990000;
+    color: white;
+}
+.btn {
+    margin-top: 0.5rem;
+    transition: 0.7s;
+    animation-duration: 1.5s;
+    animation-name: slideUp;
+}
+@keyframes slideUp {
+   0% {transform: translateY(250px)}
+   100%{transform: translateY(0);}
+}
+.btn:hover {
+    background-color: #993300;
+    color: white;
+}
+#message {
+    margin-left:0.5rem;
+    color: white;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0.5rem;
+      width: 100%;
+    }
+}
+#endGame {
+    position:fixed;
+    left:50%;
+    transform: translate(-50%, 0);
+    color: white;
+    visibility:hidden;
+}
+.end-msg-style {
+    animation-duration: 3s;
+    animation-name: fadeIn;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+}
